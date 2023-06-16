@@ -13,7 +13,7 @@
 // while(myNumber < 50){
 //     console.log(myNumber);
 //     myNumber++; //without this, it becomes an endless loop
-    //do not creat an endless loop
+//do not creat an endless loop
 // }
 
 // for loop
@@ -44,8 +44,8 @@
 
 
 //functions with dave gray
- // methods === built-in functions
- //e.g match methods etc
+// methods === built-in functions
+//e.g match methods etc
 
 
 
@@ -59,7 +59,7 @@
 //     } else{
 //         return num1
 //     }
-   
+
 //  }
 //  console.log(sum(2, 7 ))
 
@@ -114,7 +114,7 @@
 // function myScope(){
 //     // const 
 // }
-  
+
 // // so i dont really understand the whole local and global and function and block level scope 
 
 
@@ -129,7 +129,7 @@
 
 // //refer to the array
 // console.log(myArrayA)
- 
+
 // // length property of an Array
 // console.log(myArrayA.length)
 
@@ -257,3 +257,156 @@
 //     }
 //     counter+=2; 
 // }
+
+// objects oriented syntax
+//objects come in key value pairs stored in curly braces
+const myObj = { name: "zhang" };
+
+const anotherObj = {
+    alive: "true",
+    age: 25,
+    hobbies: ["swimming", "sleep", "eat", "learn"],
+    beverages: {
+        morning: "coffee",
+        afternoon: "junk"
+    },
+
+    //objects can also use methodes e.g
+    action: function() {
+        return `time for ${this.beverages.morning}`;
+    }
+
+}
+
+console.log(myObj)
+console.log(myObj.name)
+console.log(anotherObj)
+console.log(anotherObj.hobbies[0])
+console.log(anotherObj.beverages.morning)
+console.log(anotherObj["alive"])
+console.log(anotherObj["beverages"]["afternoon"])
+console.log(anotherObj.action())
+
+// const vehicle = {
+//     wheels: 4,
+//     engine: function() {
+//         return "vrooom";
+//     }
+// }
+
+// const truck = Object.create(vehicle);
+// truck.door = 2;
+// console.log(truck);
+// console.log(truck.wheels); //this is an inheritance property
+// console.log(truck.engine())
+
+// const car = Object.create(vehicle)
+// car.doors = 4;
+// car.engine = function() {
+//     return "whoosh!!";
+// }
+
+// console.log(car.engine())
+// console.log(car.doors)
+// console.log(car.wheels)
+
+// const tesla = Object.create(car)
+// console.log(tesla)
+// console.log(tesla.doors)
+// console.log(tesla.engine())
+// console.log(tesla.wheels)
+
+// tesla.engine = function() {
+//     return "shhhhhhhh"
+// }
+
+// console.log(tesla.engine())
+
+const heros = {
+    robotics: "tony stark",
+    combat: "steve rogers",
+    alien: "clark kent",
+    kid: "billy batson",
+    animal: "peter parker",
+    human: "bruce wane"
+};
+
+// console.log(Object.keys(heros));
+// console.log(Object.values(heros))
+
+// for (let type in heros) {
+//     console.log(`on ${type}, its ${heros[type]}`);
+// }
+
+// //adding to the object
+// heros.royals = "tchala"
+
+// console.log(Object.keys(heros))
+// console.log(Object.values(heros))
+
+// //deleting an exixting property
+// delete heros.royals;
+// //checking for the property
+// console.log(heros.hasOwnProperty("royals"))
+
+// console.log(Object.keys(heros))
+
+//destructuring objects
+
+// const { robotics: myVariable, combat: myCombat } = heros;
+// console.log(myVariable)
+// console.log(myCombat)
+
+const { robotics, combat, alien, kid, animal, human } = heros
+
+console.log(combat)
+console.log(human)
+
+function saves({ alien }) {
+    return `${alien} super power`
+}
+console.log(saves(heros))
+
+//JS class
+
+class anime {
+    constructor(animeType) {
+        // this.age = animeAge;
+        this.type = animeType;
+        this.genre = "ecchi";
+        // this.toppings = []
+    }
+    getGenre() {
+        return this.genre;
+    }
+
+    setGenre() {
+
+        }
+        // get animeGenre() {
+        //     return this.genre;
+        // }
+
+    // set animeGenre(animeGenre) {
+    //     this.genre = animeGenre
+    // }
+    // getToppings() {
+    //     return this.toppings
+    // }
+
+    // setToppings(toppings) {
+    //     this.toppings.push(toppings)
+    // }
+
+    // watch() {
+    //     console.log(`watching a ${this.age} ${this.genre} ${this.type} anime `)
+    // }
+}
+
+// const myAnime = new anime("pirate", "isekai");
+// myAnime.animeGenre = "fire"
+// myAnime.watch();
+// myAnime.setToppings("toppings")
+// myAnime.setToppings("ninjas")
+// console.log(myAnime.animeGenre)
+// console.log(myAnime.getToppings())
